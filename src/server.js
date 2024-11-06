@@ -1,6 +1,9 @@
 const http = require("http");
 const url = require("url");
 const fs = require("fs");
+const dotenv = require("dotenv");
+
+require('dotenv').config()
 
 const server = http.createServer((req, res) => {
     let parsedUrl = url.parse(req.url, true);
@@ -11,7 +14,7 @@ const server = http.createServer((req, res) => {
     }
     console.log(`Requested path ${path}`);
 
-    let file = __dirname + "/../public/" + path;
+    let file = __dirname + "/public/" + path;
 
     fs.readFile(file, function(err, content) {
         if (err) {

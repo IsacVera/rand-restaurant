@@ -1,0 +1,15 @@
+{
+  "name": "rand-restaurant",
+  "version": "1.0.0",
+  "description": "Using mapbox with js to find random restaurants to eat at",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
