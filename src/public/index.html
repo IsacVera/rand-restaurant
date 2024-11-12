@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Restuarant Finder</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.mapbox.com/mapbox-assembly/v1.3.0/assembly.min.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.21/web.js"></script>
   </head>
   <body>
-      Hello world
-    <script src="app.js"></script>
+    <h1 id="title">Random Restuarant Finder</h1>
+    <div id='map'></div>
+    <div>
+        <h2>Input Your Location</h2>
+        <div id='geocoder-container'></div>
+    </div>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

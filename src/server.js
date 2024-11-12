@@ -9,10 +9,16 @@ const server = http.createServer((req, res) => {
     let parsedUrl = url.parse(req.url, true);
 
     let path = parsedUrl.path.replace(/^\/+|\/+$/g, "");
+
+    if (path == "api/mapbox-key") {
+        res.writeHead(200, {"Content-type": "application/json"});
+        res.end(JSON.stringify({ token: process.env.KEY }));
+        return;
+    }
+
     if (path == "") {
         path = "index.html";
     }
-    console.log(`Requested path ${path}`);
 
     let file = __dirname + "/public/" + path;
 
@@ -22,7 +28,6 @@ const server = http.createServer((req, res) => {
             res.writeHead(404);
             res.end();
         } else {
-            console.log(`Returning ${path}`);
             res.setHeader("X-Content-Type-Options", "nosniff");
             switch(path) {
                 case "style.css":
@@ -41,4 +46,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000, "localhost", () => {
     console.log("Listening on port 3000");
+    console.log("http://localhost:3000/");
 });
